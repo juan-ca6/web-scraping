@@ -64,15 +64,18 @@ docker run -d --name selenium-server --network selenium-network -p 4444:4444 sel
 Para visualizar las ventanas del navegador, configura X11:
 
 ```bash
-# Verificar que X11 está activo
+# Verificar que X11 está activo. 
 echo $DISPLAY
+```
 
+Si devuelve algo como :0 o :1, significa que X11 está configurado correctamente. Si no devuelve nada, necesitas iniciar X11. En Ubuntu, X11 normalmente está preinstalado, pero si no lo está, instálalo con:
+```bash
 # Si X11 no está instalado, instálalo
 sudo apt update && sudo apt install x11-apps -y
-
-# Permitir conexiones locales a X11
-xhost +local:
+xhost +local: # # Permitir conexiones locales a X11
 ```
+
+
 
 ### 4. Configurar Cliente Selenium con Jupyter
 
