@@ -21,6 +21,7 @@ cd path/donde/quieres/tu/repositorio
 git clone url/git@
 cd web-scraping
 ```
+
 ## Red de Contenedores
 
 Una red de contenedores es un entorno virtualizado que conecta contenedores entre sí y con otros recursos, como bases de datos, servicios externos o redes físicas.
