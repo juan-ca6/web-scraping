@@ -6,7 +6,7 @@ Bienvenidos al proyecto sobre web scraping. Este repositorio contiene el materia
 
 ```
 .
-├── notebooks/          # Jupyter notebooks para scraping
+├── notebooks/         # Jupyter notebooks para la clase
 ├── tareas/            # Directorio de tareas
 ├── Dockerfile         # Configuración del contenedor
 ├── README.md          # Este archivo
