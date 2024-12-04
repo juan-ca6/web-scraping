@@ -60,9 +60,11 @@ docker run -d --name selenium-server --network selenium-network -p 4444:4444 sel
 ```
 
 Para abrir el contenedor primero descarga en VS Code la extensión de Docker e identifica el siguiente apartado:  
+
 <img width="196" alt="Screenshot 2024-12-04 at 12 43 54" src="https://github.com/user-attachments/assets/4a0444df-c4f4-48fc-8dda-fb4ff732bbe4">
 
 Considera el container con nombre "selenium/standalone-chrome" o "seleniarm/standalone-chromium" y luego deberas hacer doble click. Si no esta iniciado, deberas hacer click en "start". Después harás nuevamente doble click y harás click en "Open in Browser". Esto abrirá la ventana en chrome que funcionara como pantalla. 
+
 <img width="230" alt="Screenshot 2024-12-04 at 12 41 25" src="https://github.com/user-attachments/assets/43354c06-9310-43ff-975f-3a028f23a089">
 
 ### 3. Configurar Visualización (X11)
@@ -87,7 +89,6 @@ xhost +local: # # Permitir conexiones locales a X11
 
 Construir la imagen del cliente
 ```bash
-# Construir la imagen del cliente
 docker build -t selenium-client .
 ```
 
@@ -101,6 +102,14 @@ docker run --rm -it \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     selenium-client
 ```
+
+Aparecerán varios logs en la terminal y deberás buscar un link similar al siguiente: 
+```bash
+http://127.0.0.1:8888/tree?token=acc1426b0db1c4c57947c17bc3e961133a4132f50280ac2c
+```
+
+Copialo y pegalo en tu navegador chrome. 
+
 
 ## Uso
 
