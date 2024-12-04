@@ -110,9 +110,20 @@ http://127.0.0.1:8888/tree?token=acc1426b0db1c4c57947c17bc3e961133a4132f50280ac2
 
 Copialo y pegalo en tu navegador chrome. 
 
+### 5. Uso
 
-## Uso
+Para este punto tendrás 2 ventanas abiertas en tu navegador. Una servirá para visulizar el código y el otro para ejecutar los jupyter notebooks. Asegúrate de que todos los contenedores estén ejecutándose correctamente. 
 
-1. Asegúrate de que todos los contenedores estén ejecutándose correctamente
-2. Accede a Jupyter Notebook a través de http://localhost:8888
-3. Utiliza los notebooks en el directorio `notebooks/` para ejecutar tus tareas de scraping
+Cuando trates de ejecutar un notebook toma en cuenta lo siguiente: 
+1. Ejecuta la primera casilla del notebook
+2. Vete a la ventana para visualización (selenium grid) y haces click en el apartado de Sessions (esta en la barra lateral de la izquierda). Entonces aparecerá algo así: 
+
+<img width="1597" alt="Screenshot 2024-12-04 at 12 53 27" src="https://github.com/user-attachments/assets/d5c6d905-53b8-4e89-99b1-d7ec4fbf30f3">
+
+3. Haz click en el icono de la cámara. Saldrá un popup como el siguiente:
+
+<img width="321" alt="Screenshot 2024-12-04 at 12 54 41" src="https://github.com/user-attachments/assets/e9aab966-5863-4cb4-aea3-7b11db6615b0">
+
+4. Después de ingresar la anterior contreseña, finalmente podrás ver el navegador y ver en tiempo real los efectos de los notebooks.  
+
+
