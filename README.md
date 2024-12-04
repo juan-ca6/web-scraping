@@ -81,14 +81,28 @@ Para visualizar las ventanas del navegador, configura X11:
 echo $DISPLAY
 ```
 
-Si devuelve algo como :0 o :1, significa que X11 está configurado correctamente. Si no devuelve nada, necesitas iniciar X11. En Ubuntu, X11 normalmente está preinstalado, pero si no lo está, instálalo con:
+Si devuelve algo como :0 o :1, significa que X11 está configurado correctamente. Si no devuelve nada, necesitas iniciar X11. En Ubuntu, X11 normalmente está preinstalado, pero si no lo está, instálalo con (NO PARA MAC):
 ```bash
-# Si X11 no está instalado, instálalo
 sudo apt update && sudo apt install x11-apps -y
 xhost +local: # # Permitir conexiones locales a X11
 ```
 
+PARA MAC: primero debes correr el siguiente comando
+```bash
+brew install --cask xquartz # chance te pide sudo permission
+```
 
+Te instalara la siguiente app: 
+
+<img width="155" alt="Screenshot 2024-12-04 at 15 32 28" src="https://github.com/user-attachments/assets/f7a3c0dd-d6a1-413e-bbdc-91368faecd1f">
+
+Ahora, debes abrirla (no abrira ninguna ventana) y fijate en la barra superior. Da click en Xquartz y luego en settings, te abrira una ventana. 
+
+<img width="850" alt="Screenshot 2024-12-04 at 15 33 06" src="https://github.com/user-attachments/assets/344d46e9-c838-4e17-bfa5-6f57158e1610">
+
+Vete al apartado de security y click en Allow (todos los checkboxes deben estar seleccionados)
+
+<img width="873" alt="Screenshot 2024-12-04 at 15 34 14" src="https://github.com/user-attachments/assets/ba78ac96-5dc8-4eb0-8919-4a397334b139">
 
 ### 4. Configurar Cliente Selenium con Jupyter
 
