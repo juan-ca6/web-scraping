@@ -50,9 +50,13 @@ Descarga y ejecuta el servidor Selenium con Chrome:
 ```bash
 # Descargar la imagen
 docker pull selenium/standalone-chrome
+o
+docker pull seleniarm/standalone-chromium # Para Mac M1, M2, M3                                               
 
 # Ejecutar el servidor
 docker run -d --name selenium-server --network selenium-network -p 4444:4444 selenium/standalone-chrome
+o
+docker run -d --name selenium-server --network selenium-network -p 4444:4444 seleniarm/standalone-chromium # Para Mac M1, M2, M3
 ```
 
 ### 3. Configurar Visualización (X11)
