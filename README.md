@@ -79,13 +79,14 @@ xhost +local: # # Permitir conexiones locales a X11
 
 ### 4. Configurar Cliente Selenium con Jupyter
 
-Construye y ejecuta el contenedor cliente:
-
+Construir la imagen del cliente
 ```bash
 # Construir la imagen del cliente
 docker build -t selenium-client .
+```
 
-# Ejecutar el cliente
+Ejecutar el cliente
+```bash
 docker run --rm -it \
     --name selenium-client \
     --network selenium-network \
@@ -100,7 +101,3 @@ docker run --rm -it \
 1. Asegúrate de que todos los contenedores estén ejecutándose correctamente
 2. Accede a Jupyter Notebook a través de http://localhost:8888
 3. Utiliza los notebooks en el directorio `notebooks/` para ejecutar tus tareas de scraping
-
-## Requisitos
-
-Los requisitos específicos del proyecto se encuentran en el archivo `requirements.txt`. Asegúrate de que todas las dependencias estén correctamente instaladas en el contenedor.
