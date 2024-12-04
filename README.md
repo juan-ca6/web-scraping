@@ -2,15 +2,6 @@
 
 Bienvenidos al proyecto sobre web scraping. Este repositorio contiene el material necesario para entender, instalar y trabajar con selenium, una potente herramienta de automatización diseñada para pruebas funcionales de aplicaciones web. Contiene una solución para web scraping y automatización utilizando contenedores Docker y Selenium Grid.
 
-## Instalación
-
-Crear un fork y clonar tu propio repositorio
-```bash
-cd path/donde/quieres/tu/repositorio
-git clone url/git@
-cd web-scraping
-```
-
 ## Estructura del Repositorio
 
 ```
@@ -22,6 +13,14 @@ cd web-scraping
 └── requirements.txt   # Dependencias del proyecto
 ```
 
+## Instalación
+
+Crear un fork y clonar tu propio repositorio
+```bash
+cd path/donde/quieres/tu/repositorio
+git clone url/git@
+cd web-scraping
+```
 ## Red de Contenedores
 
 Una red de contenedores es un entorno virtualizado que conecta contenedores entre sí y con otros recursos, como bases de datos, servicios externos o redes físicas.
