@@ -59,6 +59,12 @@ o
 docker run -d --name selenium-server --network selenium-network -p 4444:4444 seleniarm/standalone-chromium # Para Mac M1, M2, M3
 ```
 
+Para abrir el contenedor primero descarga en VS Code la extensión de Docker e identifica el siguiente apartado:  
+<img width="527" alt="Screenshot 2024-12-04 at 12 39 09" src="https://github.com/user-attachments/assets/d511494e-905f-4482-8f9d-24f8eb952767">
+
+Considera el container con nombre "selenium/standalone-chrome" o "seleniarm/standalone-chromium" y luego deberas hacer doble click. Si no esta iniciado, deberas hacer click en "start". Después harás nuevamente doble click y harás click en "Open in Browser". Esto abrirá la ventana en chrome que funcionara como pantalla. 
+<img width="230" alt="Screenshot 2024-12-04 at 12 41 25" src="https://github.com/user-attachments/assets/43354c06-9310-43ff-975f-3a028f23a089">
+
 ### 3. Configurar Visualización (X11)
 
 Para visualizar las ventanas del navegador, configura X11:
