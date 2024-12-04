@@ -2,6 +2,11 @@
 
 Bienvenidos al proyecto sobre web scraping. Este repositorio contiene el material necesario para entender, instalar y trabajar con selenium, una potente herramienta de automatización diseñada para pruebas funcionales de aplicaciones web. Contiene una solución para web scraping y automatización utilizando contenedores Docker y Selenium Grid.
 
+Este es el link para la presentación: 
+```
+https://www.canva.com/design/DAGYAe6Bn6A/png9RYbz41HVfNJiEug28g/edit?utm_content=DAGYAe6Bn6A&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+```
+
 ## Estructura del Repositorio
 
 ```
