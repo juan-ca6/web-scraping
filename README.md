@@ -1,48 +1,90 @@
-# Scraping y automatización de llenado
-prueba para construir contenedor para web scraping
+# Web Scraping con Selenium
 
+Este repositorio contiene una solución para web scraping y automatización utilizando contenedores Docker y Selenium Grid.
 
-# Red de contenedores
+## Estructura del Repositorio
+
+```
+.
+├── notebooks/          # Jupyter notebooks para scraping
+├── tareas/            # Directorio de tareas
+├── Dockerfile         # Configuración del contenedor
+├── README.md          # Este archivo
+└── requirements.txt   # Dependencias del proyecto
+```
+
+## Red de Contenedores
+
 Una red de contenedores es un entorno virtualizado que conecta contenedores entre sí y con otros recursos, como bases de datos, servicios externos o redes físicas.
 
+### Tipos de Red
 
-Bridge (puente):
-La más común para contenedores en una misma máquina.
-Se utiliza por defecto si no especificas otra red.
-Los contenedores conectados a esta red pueden comunicarse entre sí usando nombres de host.
+- **Bridge (puente)**:
+  - La más común para contenedores en una misma máquina
+  - Se utiliza por defecto si no especificas otra red
+  - Los contenedores conectados a esta red pueden comunicarse entre sí usando nombres de host
 
-# Comando para crear la red
-Utiliza el siguiente comando en tu bash para crear la red de contenedores. Uno será el selenium server y otro el selenium client.
+## Configuración del Ambiente
+
+### 1. Crear la Red
+
+Crea la red de contenedores que conectará el servidor Selenium con el cliente:
+
 ```bash
 docker network create selenium-network
 ```
-# Comandos para crear la imagen y correr el server
-Utiliza los siguientes comando para crear un selenium grid dónde podrás abrir el navegador de muestra y visualizar los procesos hechos por selenium.
+
+### 2. Configurar Selenium Server
+
+Descarga y ejecuta el servidor Selenium con Chrome:
+
 ```bash
+# Descargar la imagen
 docker pull selenium/standalone-chrome
-```
-```bash
+
+# Ejecutar el servidor
 docker run -d --name selenium-server --network selenium-network -p 4444:4444 selenium/standalone-chrome
 ```
-# Visualizar las ventanas
-Ejecuta el siguiente comando en Ubuntu para verificar que el servidor X11 está activo:
+
+### 3. Configurar Visualización (X11)
+
+Para visualizar las ventanas del navegador, configura X11:
+
 ```bash
+# Verificar que X11 está activo
 echo $DISPLAY
-```
-Si devuelve algo como :0 o :1, significa que X11 está configurado correctamente.
-Si no devuelve nada, necesitas iniciar X11. En Ubuntu, X11 normalmente está preinstalado, pero si no lo está, instálalo con:
-```bash
+
+# Si X11 no está instalado, instálalo
 sudo apt update && sudo apt install x11-apps -y
-```
-```bash
+
+# Permitir conexiones locales a X11
 xhost +local:
 ```
 
-# Comandos para crear la imagen y correr el client con jupyter
-Utiliza los siguientes comandos para crear un cliente de selenium que se conectará al grid para poder iniciar una sesión e ir crapeando o llenando en automático.
+### 4. Configurar Cliente Selenium con Jupyter
+
+Construye y ejecuta el contenedor cliente:
+
 ```bash
+# Construir la imagen del cliente
 docker build -t selenium-client .
+
+# Ejecutar el cliente
+docker run --rm -it \
+    --name selenium-client \
+    --network selenium-network \
+    -p 8888:8888 \
+    -e DISPLAY=$DISPLAY \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    selenium-client
 ```
-```bash
-docker run --rm -it --name selenium-client --network selenium-network -p 8888:8888 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix selenium-client
-```
+
+## Uso
+
+1. Asegúrate de que todos los contenedores estén ejecutándose correctamente
+2. Accede a Jupyter Notebook a través de http://localhost:8888
+3. Utiliza los notebooks en el directorio `notebooks/` para ejecutar tus tareas de scraping
+
+## Requisitos
+
+Los requisitos específicos del proyecto se encuentran en el archivo `requirements.txt`. Asegúrate de que todas las dependencias estén correctamente instaladas en el contenedor.
