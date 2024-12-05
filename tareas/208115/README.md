@@ -6,4 +6,4 @@ En el primero, no pedía que guardarmos los títulos en un df, entonces solament
 En el segundo, realizé la búsqueda en la sección de 'Past'. Primero busqué el 'elemento' Past, para poder meterme y guardar en un df todos los titulos de ese apartado. 
 ---
 En el tercero, hice el código para que "typeara" la palabra "dune" en el search bar y después extrajera todos los títulos que se desplegaban y los pusiera en un df. Los hice despues un csv para poder verlos completos (aunque nunca lo pude correr). 
-
+---
