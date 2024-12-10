@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  selenium-server:
+    image: selenium/standalone-chrome
+    container_name: selenium-server
+    ports:
+      - "4444:4444"
+    shm_size: 2g
+
+  python:
+    image: python:3.12-slim
+    container_name: python-container
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    depends_on:
+      - selenium-server
+    command: tail -f /dev/null
